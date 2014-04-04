@@ -1,0 +1,10 @@
+<div class="title">
+	<h1>Edit a Minion</h1>
+</div>
+<form action="/minion/<%= @minion.id %>" method="post">
+	<input type="hidden" name="_method" value="put">
+	<input type="text" name="title" value="<%= @minion.title %>">
+	<input type="text" name="race" value="<%= @minion.race %>">
+	<input type="text" name="abilities" value="<%= @minion.abilities %>">
+	<input type="submit" name="Submit">
+</form>

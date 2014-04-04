@@ -1,0 +1,50 @@
+<div class="title">
+	<h1>List of All Minions: </h1>
+</div>
+<ul>
+	<div class="min_font"> 
+
+		<table style="width: 10px" border="1"> <% Minion.all.each do |x| %>
+			<tr><td>Class: </td>
+				<td>
+					<%= x.title %> 
+					<td>
+						<form method="get" action="/minion/<%=x.id%>/edit">
+							<button type="Submit">Edit this minion!</button>
+						</form>
+					</td>
+				</td>
+			</tr>
+			<tr>
+				<td>Race: </td>
+				<td>
+					<%= x.race %></td>
+				</tr>
+				<tr>
+					<td>Abilities: </td>
+					<td>
+						<%= x.abilities %> 
+					</td>
+				</tr>
+				<tr>
+					<td>Enlisted on: </td>
+					<td>
+						<%= x.created_at %>
+					</td>
+				</tr>
+				<tr>
+					<td>ID#: </td>
+					<td>
+						<%= x.id %>
+					</td>
+				</tr>
+
+
+
+				<% end %>
+			</ul>
+		</table>
+	</div>
+	<form method="get" action="/">
+		<button type="Submit">Back to index!</button>
+	</form>
